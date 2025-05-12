@@ -1,0 +1,49 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. How are you? I'm fine: thanks.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I'm fine:
+<BLANKLINE>
+thanks.
+<BLANKLINE>
+
+>>> text_indentation("Python is fun.It's powerful:really powerful?Yes!")
+Python is fun.
+<BLANKLINE>
+It's powerful:
+<BLANKLINE>
+really powerful?
+<BLANKLINE>
+Yes!
+
+>>> text_indentation("   Lots of spaces before.  And after?   Yes:   okay.   ")
+   Lots of spaces before.
+<BLANKLINE>
+And after?
+<BLANKLINE>
+Yes:
+<BLANKLINE>
+okay.
+<BLANKLINE>
+
+>>> text_indentation("....")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("One sentence.")
+One sentence.
+<BLANKLINE>
+
+>>> text_indentation("Hello.     How are you?")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
