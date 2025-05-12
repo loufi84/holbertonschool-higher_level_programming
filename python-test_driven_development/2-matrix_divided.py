@@ -30,6 +30,11 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix (list of lists)"
                         " of integers/floats")
 
+    # Check if matrix is empty
+    if not matrix:
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
+
     # Check if each rows are the same size
     row_length = len(matrix[0] if matrix else 0)
     for row in matrix:
