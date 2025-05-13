@@ -34,7 +34,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("shapes (1,0) and (2,2) not aligned: 0"
                          " (dim 1) != 2 (dim 0)")
     if not m_b or m_b == [[]]:
-        raise ValueError("shapes (1,0) and (2,2) not aligned: 0"
+        raise ValueError("shapes (2,2) and (1,0) not aligned: 0"
                          " (dim 1) != 1 (dim 0)")
 
     try:
