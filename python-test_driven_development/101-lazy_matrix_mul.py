@@ -52,10 +52,14 @@ def lazy_matrix_mul(m_a, m_b):
         return result
 
     except ValueError as e:
-        if "shapes" in str(e):
+        msg = str(e).splitlines()[0]
+        if "setting an array element with a sequence" in msg:
+            print(msg)
+        elif "shapes" in msg:
             raise ValueError("shapes not aligned")
-        raise ValueError(str(e))
+        else:
+            raise ValueError(msg)
     except TypeError as e:
-        if "scalar" in str(e):
+        if "scalar" in msg:
             raise TypeError("Scalar operands are not allowed, use '*' instead")
         raise TypeError("invalid data type for einsum")
