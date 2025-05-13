@@ -26,9 +26,9 @@ def lazy_matrix_mul(m_a, m_b):
 
     # Validate that m_a and m_b are lists
     if not isinstance(m_a, list):
-        raise TypeError("m_a must be a list")
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
     if not isinstance(m_b, list):
-        raise TypeError("m_b must be a list")
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
 
     # Validate that m_a and m_b are lists of lists
     if not all(isinstance(row, list) for row in m_a):
