@@ -54,7 +54,7 @@ def lazy_matrix_mul(m_a, m_b):
     except ValueError as e:
         msg = str(e).splitlines()[0]
         if "setting an array element with a sequence" in msg:
-            print(msg)
+            print("setting an array element with a sequence")
             return
         elif "shapes" in msg:
             raise ValueError("shapes not aligned")
