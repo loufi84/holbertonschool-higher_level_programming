@@ -61,4 +61,4 @@ def lazy_matrix_mul(m_a, m_b):
     # Matricial multiplication using numpy
     res = np.array(m_a) @ np.array(m_b)
 
-    return res.tolist()
+    return res
