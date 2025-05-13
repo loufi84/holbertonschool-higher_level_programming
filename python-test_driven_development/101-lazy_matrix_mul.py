@@ -43,6 +43,18 @@ def lazy_matrix_mul(m_a, m_b):
         m_a = np.array(m_a)
         m_b = np.array(m_b)
 
+                # Ensure that the input arrays are not empty or improperly formed
+        if m_a.size == 0 or m_b.size == 0:
+            raise ValueError("One of the matrices is empty.")
+
+        if m_a.shape[1] != m_b.shape[0]:
+            a_shape = f"({m_a.shape[0]},{m_a.shape[1]})"
+            b_shape = f"({m_b.shape[0]},{m_b.shape[1]})"
+            raise ValueError(
+                f"shapes {a_shape} and {b_shape} not aligned:"
+                f"{m_a.shape[1]} (dim 1) != {m_b.shape[0]} (dim 0)"
+            )
+
         # Elements verification
         if not np.issubdtype(m_a.dtype, np.number):
             raise TypeError("invalid data type for einsum")
