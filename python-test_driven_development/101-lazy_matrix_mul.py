@@ -41,7 +41,7 @@ def lazy_matrix_mul(m_a, m_b):
         if len(m_a) == 0:
             raise ValueError("m_a can't be empty")
         else:
-            raise ValueError("m_b can't be empty")
+            raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
 
     # Validate that each row in m_a and m_b is the same length
     row_length_a = len(m_a[0])
