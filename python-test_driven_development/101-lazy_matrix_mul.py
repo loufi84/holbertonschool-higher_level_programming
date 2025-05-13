@@ -23,6 +23,12 @@ def lazy_matrix_mul(m_a, m_b):
         ValueError: If the matrices cannot be multiplied
         due to dimension mismatch.
     """
+    # Check for type
+    if not isinstance(m_a, list):
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
+    if not isinstance(m_b, list):
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
+
 
     m_a = np.array(m_a)
     m_b = np.array(m_b)
