@@ -38,15 +38,6 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("shapes (2,2) and (1,0) not aligned: 2"
                          " (dim 1) != 1 (dim 0)")
 
-    # Check dimensions before numpy conversion
-    if len(m_a[0]) != len(m_b):
-        a_shape = f"({len(m_a)},{len(m_a[0])})"
-        b_shape = f"({len(m_b)},{len(m_b[0])})"
-        raise ValueError(
-                        f"shapes {a_shape} and {b_shape} not aligned:"
-                        f"{len(m_a[0])} (dim 1) != {len(m_b)} (dim 0)"
-                        )
-
     try:
         # Numpy conversion
         m_a = np.array(m_a)
