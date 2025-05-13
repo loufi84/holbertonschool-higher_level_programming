@@ -44,7 +44,7 @@ def lazy_matrix_mul(m_a, m_b):
             raise TypeError("m_a must be a list of lists")
         if not all(isinstance(row, list) for row in m_b):
             raise TypeError("m_b must be a list of lists")
-    
+
         # Numpy conversion
         m_a = np.array(m_a)
         m_b = np.array(m_b)
