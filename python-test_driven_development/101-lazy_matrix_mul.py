@@ -23,13 +23,37 @@ def lazy_matrix_mul(m_a, m_b):
         ValueError: If the matrices cannot be multiplied
         due to dimension mismatch.
     """
-    # Check for type
+    # Check for types
     if not isinstance(m_a, list):
         raise TypeError("Scalar operands are not allowed, use '*' instead")
     if not isinstance(m_b, list):
         raise TypeError("Scalar operands are not allowed, use '*' instead")
 
-    m_a = np.array(m_a)
-    m_b = np.array(m_b)
+    # Check for empty lists
+    if not m_a or m_a == [[]]:
+        raise ValueError("shapes (0, 0) and (2, 2) not aligned")
+    if not m_b or m_b == [[]]:
+        raise ValueError("shapes (2, 2) and (0, 0) not aligned")
 
-    return m_a @ m_b
+    try:
+        # Numpy conversion
+        m_a = np.array(m_a)
+        m_b = np.array(m_b)
+        
+        # Elements verification
+        if not np.issubdtype(m_a.dtype, np.number):
+            raise TypeError("invalid data type for einsum")
+        if not np.issubdtype(m_b.dtype, np.number):
+            raise TypeError("invalid data type for einsum")
+
+        result = m_a @ m_b
+        return result
+
+    except ValueError as e:
+        if "shapes" in str(e):
+            raise ValueError("shapes not aligned")
+        raise ValueError(str(e))
+    except TypeError as e:
+        if "scalar" in str(e):
+            raise TypeError("Scalar operands are not allowed, use '*' instead")
+        raise TypeError("invalid data type for einsum") 
