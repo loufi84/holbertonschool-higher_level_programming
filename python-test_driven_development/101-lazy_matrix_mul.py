@@ -59,6 +59,14 @@ def lazy_matrix_mul(m_a, m_b):
             sys.exit(0)
         elif "shapes" in msg:
             raise ValueError("shapes not aligned")
+        elif "matmul: Input operand 1 has a mismatch" in msg:
+            # Incompatible dimensions
+            a_shape = f"({len(m_a)},{len(m_a[0])})" if m_a else "(0,0)"
+            b_shape = f"({len(m_b)},{len(m_b[0])})" if m_b else "(0,0)"
+            raise ValueError(
+                            f"shapes {a_shape} and {b_shape} not aligned: "
+                            f"{len(m_a[0])} (dim 1) != {len(m_b)} (dim 0)"
+                            )
         else:
             raise ValueError(msg)
     except TypeError as e:
