@@ -39,6 +39,12 @@ def lazy_matrix_mul(m_a, m_b):
                          " (dim 1) != 1 (dim 0)")
 
     try:
+
+        if not all(isinstance(row, list) for row in m_a):
+            raise TypeError("m_a must be a list of lists")
+        if not all(isinstance(row, list) for row in m_b):
+            raise TypeError("m_b must be a list of lists")
+    
         # Numpy conversion
         m_a = np.array(m_a)
         m_b = np.array(m_b)
@@ -46,6 +52,12 @@ def lazy_matrix_mul(m_a, m_b):
         # Ensure that the input arrays are not empty or improperly formed
         if m_a.size == 0 or m_b.size == 0:
             raise ValueError("One of the matrices is empty.")
+
+        # Elements verification
+        if not np.issubdtype(m_a.dtype, np.number):
+            raise TypeError("invalid data type for einsum")
+        if not np.issubdtype(m_b.dtype, np.number):
+            raise TypeError("invalid data type for einsum")
 
         if m_a.shape[1] != m_b.shape[0]:
             a_shape = f"({m_a.shape[0]},{m_a.shape[1]})"
@@ -55,20 +67,13 @@ def lazy_matrix_mul(m_a, m_b):
                 f" {m_a.shape[1]} (dim 1) != {m_b.shape[0]} (dim 0)"
             )
 
-        # Elements verification
-        if not np.issubdtype(m_a.dtype, np.number):
-            raise TypeError("invalid data type for einsum")
-        if not np.issubdtype(m_b.dtype, np.number):
-            raise TypeError("invalid data type for einsum")
-
         result = m_a @ m_b
         return result
 
     except ValueError as e:
         msg = str(e).splitlines()[0]
         if "setting an array element with a sequence" in msg:
-            print("setting an array element with a sequence.")
-            sys.exit(0)
+            raise ValueError("setting an array element with a sequence.")
 
         elif "matmul: Input operand 1 has a mismatch" in msg:
             # Incompatible dimensions
