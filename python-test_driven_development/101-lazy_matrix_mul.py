@@ -33,13 +33,14 @@ def lazy_matrix_mul(m_a, m_b):
     if not m_a or m_a == [[]]:
         raise ValueError("shapes (0, 0) and (2, 2) not aligned")
     if not m_b or m_b == [[]]:
-        raise ValueError("shapes (2, 2) and (0, 0) not aligned")
+        raise ValueError("shapes (1,0) and (2,2) not aligned: 0"
+                         "(dim 1) != 2 (dim 0)")
 
     try:
         # Numpy conversion
         m_a = np.array(m_a)
         m_b = np.array(m_b)
-        
+
         # Elements verification
         if not np.issubdtype(m_a.dtype, np.number):
             raise TypeError("invalid data type for einsum")
@@ -56,4 +57,4 @@ def lazy_matrix_mul(m_a, m_b):
     except TypeError as e:
         if "scalar" in str(e):
             raise TypeError("Scalar operands are not allowed, use '*' instead")
-        raise TypeError("invalid data type for einsum") 
+        raise TypeError("invalid data type for einsum")
