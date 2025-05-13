@@ -69,8 +69,7 @@ def lazy_matrix_mul(m_a, m_b):
         if "setting an array element with a sequence" in msg:
             print("setting an array element with a sequence.")
             sys.exit(0)
-        elif "shapes" in msg:
-            raise ValueError("shapes not aligned")
+
         elif "matmul: Input operand 1 has a mismatch" in msg:
             # Incompatible dimensions
             a_shape = f"({len(m_a)},{len(m_a[0])})" if m_a else "(0,0)"
