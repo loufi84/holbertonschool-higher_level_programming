@@ -60,6 +60,6 @@ def lazy_matrix_mul(m_a, m_b):
         else:
             raise ValueError(msg)
     except TypeError as e:
-        if "scalar" in msg:
+        if "scalar" in str(e):
             raise TypeError("Scalar operands are not allowed, use '*' instead")
         raise TypeError("invalid data type for einsum")
