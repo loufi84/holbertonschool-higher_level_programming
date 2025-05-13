@@ -52,7 +52,7 @@ def lazy_matrix_mul(m_a, m_b):
             b_shape = f"({m_b.shape[0]},{m_b.shape[1]})"
             raise ValueError(
                 f"shapes {a_shape} and {b_shape} not aligned:"
-                f"{m_a.shape[1]} (dim 1) != {m_b.shape[0]} (dim 0)"
+                f" {m_a.shape[1]} (dim 1) != {m_b.shape[0]} (dim 0)"
             )
 
         # Elements verification
