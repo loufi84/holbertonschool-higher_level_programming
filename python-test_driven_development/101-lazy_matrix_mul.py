@@ -43,7 +43,7 @@ def lazy_matrix_mul(m_a, m_b):
         m_a = np.array(m_a)
         m_b = np.array(m_b)
 
-                # Ensure that the input arrays are not empty or improperly formed
+        # Ensure that the input arrays are not empty or improperly formed
         if m_a.size == 0 or m_b.size == 0:
             raise ValueError("One of the matrices is empty.")
 
@@ -76,7 +76,7 @@ def lazy_matrix_mul(m_a, m_b):
             b_shape = f"({len(m_b)},{len(m_b[0])})" if m_b else "(0,0)"
             raise ValueError(
                             f"shapes {a_shape} and {b_shape} not aligned: "
-                            f"{len(m_a[0])} (dim 1) != {len(m_b)} (dim 0)"
+                            f" {len(m_a[0])} (dim 1) != {len(m_b)} (dim 0)"
                             )
         else:
             raise ValueError(msg)
