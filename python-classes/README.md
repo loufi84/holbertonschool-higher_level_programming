@@ -1,0 +1,1 @@
+This is the directory for the first OOP project in Python
