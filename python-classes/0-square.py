@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 '''
 This module provides a single class defining a square.
 '''
+
 
 class Square:
     '''
