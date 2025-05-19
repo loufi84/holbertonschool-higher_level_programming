@@ -55,7 +55,7 @@ class Square:
     def _compare_area(self, other, op):
         if not isinstance(other, Square):
             return NotImplemented
-        return op(self.area, other.area())
+        return op(self.area(), other.area())
 
     def __eq__(self, other):
         return self._compare_area(other, lambda x, y: x == y)
