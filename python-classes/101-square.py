@@ -39,7 +39,7 @@ class Square:
         if self.__size == 0:
             return ""
 
-        lines = ["" * self.__position[1]]
+        lines = [""] * self.__position[1]
         for i in range(self.__size):
             line = " " * self.__position[0] + "#" * self.__size
             lines.append(line)
