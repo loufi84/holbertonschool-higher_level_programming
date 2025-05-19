@@ -38,7 +38,11 @@ class Rectangle:
         '''
         if self.__height == 0 or self.__width == 0:
             return ""
-        line = Rectangle.print_symbol * self.__width
+        symbol = getattr(self, "print_symbol", Rectangle.print_symbol)
+        if isinstance(symbol, list):
+            line = str(symbol) * self.__width
+        else:
+            line = str(symbol) * self.__width
         rect = "\n".join([line for i in range(self.__height)])
         return rect
 
