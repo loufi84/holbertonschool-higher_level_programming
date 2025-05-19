@@ -38,12 +38,6 @@ class Rectangle:
         line = "#" * self.__width
         rect = "\n".join([line for i in range(self.__height)])
         return rect
-    
-    def __repr__(self):
-        '''
-        This method is the official format for debugging object.
-        '''
-        return f"Rectangle({self.__width}, {self.__height})"
 
     @property
     def width(self):
