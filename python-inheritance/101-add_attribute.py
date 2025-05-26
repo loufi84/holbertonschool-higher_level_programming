@@ -5,7 +5,7 @@ if possible, based on the __dict__.
 '''
 
 
-def add_attr(obj, name, value):
+def add_attribute(obj, name, value):
     '''
     Adds a new attribute to an object if possible.
 
