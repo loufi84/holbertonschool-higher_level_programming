@@ -20,3 +20,18 @@
 >>> l5 = MyList([])
 >>> l5.print_sorted()
 []
+
+>>> l6 = MyList([10, 20])
+>>> l6.append(5)
+>>> l6
+[10, 20, 5]
+>>> l6.print_sorted()
+[5, 10, 20]
+
+>>> l7 = MyList([3, 0])
+>>> l7.append(-7)
+>>> l7.append(-1)
+>>> l7
+[3, 0, -7, -1]
+>>> l7.print_sorted()
+[-7, -1, 0, 3]
