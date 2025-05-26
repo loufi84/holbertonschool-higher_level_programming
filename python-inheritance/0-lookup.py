@@ -2,6 +2,8 @@
 '''
 Module to print attributes and methods of objects
 '''
+
+
 def lookup(obj):
     '''
     I think there is not much to say. Use dir to return all methods
