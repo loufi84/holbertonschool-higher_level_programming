@@ -20,7 +20,7 @@ def print_stats(total_size, status_counts):
 
 def main():
     total_size = 0
-    status_count = {}
+    stat_count = {}
     valid_stat_code = ['200', '301', '400', '401', '403', '404', '405', '500']
     line_count = 0
 
@@ -29,7 +29,7 @@ def main():
             parts = line.strip().split()
 
             if len(parts) >= 7:
-                status_code = parts[-2]
+                stat_code = parts[-2]
                 file_size = parts[-1]
 
                 try:
@@ -37,18 +37,19 @@ def main():
                 except ValueError:
                     pass
 
-                if status_code in valid_stat_code:
-                    status_count[status_code] = status_count.get(status_code, 0)+1
+                if stat_code in valid_stat_code:
+                    stat_count[stat_code] = stat_count.get(stat_code, 0) + 1
 
             line_count += 1
             if line_count % 10 == 0:
-                print_stats(total_size, status_count)
+                print_stats(total_size, stat_count)
 
     except KeyboardInterrupt:
         pass
 
     finally:
-        print_stats(total_size, status_count)
+        print_stats(total_size, stat_count)
+
 
 if __name__ == "__main__":
     main()
