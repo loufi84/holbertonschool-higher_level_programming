@@ -11,4 +11,4 @@ def from_json_string(my_str):
     Args:
         my_str: The JSON string
     '''
-    return json.load(my_str, encoding="utf-8")
+    return json.loads(my_str, encoding="utf-8")
