@@ -1,4 +1,4 @@
-#!/usr/bin.python3
+#!/usr/bin/python3
 '''
 This module provides a script that reads stdin and computes metrics.
 Each 10 lines or after keyboard interruption, prints stats since beginning.
