@@ -21,4 +21,4 @@ class Student:
         '''
         The function to return the dictionary description of Student
         '''
-        return Student.__dict__
+        return self.__dict__
