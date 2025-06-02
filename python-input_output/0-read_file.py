@@ -11,6 +11,6 @@ def read_file(filename=""):
         filename: The file to open
     '''
     with open(filename, encoding="utf-8") as f:
-        content = f.read().rstrip()
+        content = f.read()
         if content:
             print(content)
