@@ -12,4 +12,4 @@ def write_file(filename="", text=""):
         text: The string to write
     '''
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(text)
+        return f.write(text)
