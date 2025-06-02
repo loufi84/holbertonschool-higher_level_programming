@@ -9,6 +9,6 @@ def to_json_string(my_obj):
     '''
     This function return a serialized object in JSON
     Args:
-        my_onj: The object to serialize
+        my_obj: The object to serialize
     '''
     return json.dumps(my_obj)
