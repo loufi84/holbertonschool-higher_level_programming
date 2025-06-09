@@ -29,7 +29,7 @@ def fetch_and_save_posts():
     if r.status_code == 200:
         data = r.json()
         with open('posts.csv', 'w', newline='', encoding='utf-8') as f:
-            fields = ['id', 'title', 'body']
+            fields = ['id', 'title', 'body', 'userId']
             writer = csv.DictWriter(f, fieldnames=fields)
             writer.writeheader()
 
