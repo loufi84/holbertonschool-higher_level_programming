@@ -16,9 +16,15 @@ class SimpleHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         '''
         This is the method to handle simple endpoints with a simple HTTP
-        server. It contains 2 paths and handle others with error code 404.
+        server. It contains 3 paths and handle others with error code 404.
         '''
-        if self.path == '/data':
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API")
+
+        elif self.path == '/data':
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -37,7 +43,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"404 Page Not Found")
+            self.wfile.write(b"Endpoint not found")
 
 
 def run(server_class=HTTPServer, handler_class=SimpleHandler, port=8000):
