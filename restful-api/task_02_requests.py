@@ -12,7 +12,7 @@ def fetch_and_print_posts():
     to the stdout.
     '''
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print("Status code: {}".format(r.status_code))
+    print("Status Code: {}".format(r.status_code))
     if r.status_code == 200:
         data = r.json()
         for post in data:
@@ -25,7 +25,7 @@ def fetch_and_save_posts():
     to a CSV file named 'posts.csv'.
     '''
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
-    print("Status code: {}".format(r.status_code))
+    print("Status Code: {}".format(r.status_code))
     if r.status_code == 200:
         data = r.json()
         with open('posts.csv', 'w', newline='', encoding='utf-8') as f:
