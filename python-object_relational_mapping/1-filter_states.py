@@ -28,10 +28,10 @@ if __name__ == "__main__":
 
     cursor.execute(query)
 
-    results = cursor.fetchall()
+    states = cursor.fetchall()
 
-    for row in results:
-        print(row)
+    for state in states:
+        print("{}, '{}'".format(state[0], state[1]))
 
     cursor.close()
     db.close()
