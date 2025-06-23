@@ -25,8 +25,7 @@ if __name__ == "__main__":
     # Ouverture du curseur
     cursor = db.cursor()
 
-    query = ("SELECT * FROM states WHERE name = '{}' "
-             "ORDER BY id ASC")
+    query = ("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC")
     query = query.format(state_name)
 
     cursor.execute(query)
