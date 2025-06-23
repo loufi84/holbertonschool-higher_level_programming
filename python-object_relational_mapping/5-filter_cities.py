@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+List all cities of a given state (safe from SQL injections)
 """
 import sys
 import MySQLdb
