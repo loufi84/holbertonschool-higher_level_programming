@@ -7,6 +7,11 @@ import sys
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: <username> <password> <database>")
+        sys.exit(1)
+
+
     user = sys.argv[1]
     passwd = sys.argv[2]
     db_name = sys.argv[3]
@@ -17,7 +22,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     cursor.execute("SELECT * FROM states WHERE name "
-                   "LIKE 'N%' ORDER BY id ASC;")
+                   "LIKE BINARY 'N%' ORDER BY id ASC;")
     rows = cursor.fetchall()
 
     for row in rows:
