@@ -38,7 +38,7 @@ if __name__ == "__main__":
     results = cursor.fetchall()
 
     for row in results:
-        print("({}, '{}')".format(row[0], row[1], row[2]))
+        print("({}, '{}', '{}')".format(row[0], row[1], row[2]))
 
     cursor.close()
     db.close()
