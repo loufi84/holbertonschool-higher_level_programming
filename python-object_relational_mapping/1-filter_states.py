@@ -26,8 +26,8 @@ if __name__ == "__main__":
 
     rows = cursor.fetchall()
 
-    for id, name in rows:
-        print(f"({id}, '{name}')")
+    for row in rows:
+        print(row)
 
     cursor.close()
     db.close()
