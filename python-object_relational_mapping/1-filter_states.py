@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""
-Script that lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa
-"""
+'''
+This module will print the list of states beginning with a N.
+'''
 import MySQLdb
 import sys
 
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
 
     db = MySQLdb.connect(
-        host="localhost",
+        host='localhost',
         port=3306,
         user=username,
         passwd=password,
@@ -27,13 +26,13 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    long = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-    cursor.execute(long)
+    toolng = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    cursor.execute(toolng)
 
-    states = cursor.fetchall()
+    rows = cursor.fetchall()
 
-    for state in states:
-        print(state)
+    for id, name in rows:
+        print(f"({id}, '{name}')")
 
     cursor.close()
     db.close()
