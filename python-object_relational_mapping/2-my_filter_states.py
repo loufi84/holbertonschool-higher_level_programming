@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+Show the states of a DB MySQL with a specified name.
 """
 import MySQLdb
 import sys
