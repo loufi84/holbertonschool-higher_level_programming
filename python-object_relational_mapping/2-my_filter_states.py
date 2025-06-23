@@ -34,7 +34,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     for row in rows:
-        print(row)
+        print("({}, '{}')".format(row[0], row[1]))
 
     # Nettoyage
     cursor.close()
