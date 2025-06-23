@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+Script that displays all values in the states table matching the argument.
+Prevents SQL injection.
 """
 import sys
 import MySQLdb
