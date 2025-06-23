@@ -1,6 +1,6 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 '''
-
+Module to list all states from a specified db
 '''
 import MySQLdb
 import sys
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     for id, name in rows:
-        print(f"{id}, '{name}'")
+        print(f"({id}, '{name}')")
 
     cursor.close()
     db.close()
