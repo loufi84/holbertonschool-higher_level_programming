@@ -31,7 +31,7 @@ if __name__ == "__main__":
     results = session.query(City, State).join(State).order_by(City.id).all()
 
     for city, state in results:
-        print(f"{state.name}: ({city.id} {city.name})")
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     # Toujours bien fermer en partant
     session.close()
