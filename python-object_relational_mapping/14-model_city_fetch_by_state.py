@@ -33,4 +33,5 @@ if __name__ == "__main__":
     for city, state in results:
         print(f"{state.name}: ({city.id} {city.name})")
 
+    # Toujours bien fermer en partant
     session.close()
