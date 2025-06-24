@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} <mysql username> <mysql pwd> <db name> <state search"
+        print("Usage: {} <mysql username> <mysql pwd> <db name> <state search>"
               .format(sys.argv[0]))
         sys.exit(1)
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     state = session.query(State).filter(State.name == state_searched).first()
 
     if state:
-        print(f"{state.id}")
+        print(state.id)
     else:
         print("Not found")
 
