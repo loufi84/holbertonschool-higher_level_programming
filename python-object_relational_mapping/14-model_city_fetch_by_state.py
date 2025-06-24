@@ -3,7 +3,7 @@
 Script to fetch all cities by state.
 """
 import sys
-from model_state import State, Base
+from model_state import State
 from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
