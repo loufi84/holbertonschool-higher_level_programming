@@ -14,9 +14,3 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-
-
-if __name__ == "__main__":
-    engine_name = "mysql+pymysql://username:password@localhost:3306/db_name"
-    engine = create_engine(engine_name)
-    Base.metadata.create_all(engine)
