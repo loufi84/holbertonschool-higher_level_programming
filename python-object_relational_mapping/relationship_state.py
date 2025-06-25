@@ -5,6 +5,7 @@ Script that create a new state table and connect to localhost using port 3306.
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from relationship_city import Base
 
 
 Base = declarative_base()
