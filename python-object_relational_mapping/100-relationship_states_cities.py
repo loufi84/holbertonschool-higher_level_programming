@@ -37,7 +37,6 @@ if __name__ == "__main__":
 
     # Add to session and commit
     session.add(california)
-    session.add(san_francisco)
     session.commit()
 
     # Close session

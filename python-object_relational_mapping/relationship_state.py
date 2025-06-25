@@ -3,11 +3,8 @@
 Script that defines the State class with a relationship to City.
 """
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-
-Base = declarative_base()
+from relationship_city import Base
 
 
 class State(Base):
