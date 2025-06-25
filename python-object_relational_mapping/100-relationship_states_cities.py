@@ -3,7 +3,7 @@
 Script to create a new state.
 """
 import sys
-from relationship_state import State
+from relationship_state import State, Base
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -25,6 +25,7 @@ if __name__ == "__main__":
         pool_pre_ping=True
     )
 
+    Base.metadata.creat_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
