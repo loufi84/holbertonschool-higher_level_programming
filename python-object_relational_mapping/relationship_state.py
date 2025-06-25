@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 """
-Script that create a new state table and connect to localhost using port 3306.
+Script that defines the State class with a relationship to City.
 """
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from relationship_city import Base
+
+
+Base = declarative_base()
 
 
 class State(Base):
     """
-    The state class that inherits from Base.
+    The state class that inherits from Base with a relationship to City.
     """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship('City',
-                          back_populates="state", cascade="all, delete",
-                          order_by='City.id')
+    cities = relationship("City", back_populates="state",
+                          cascade="all, delete")

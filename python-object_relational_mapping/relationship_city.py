@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
-Script that create a new city table and connect to localhost using port 3306.
+Script that defines the City class with a relationship to State.
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-
-
-Base = declarative_base()
+from relationship_state import Base
 
 
 class City(Base):
