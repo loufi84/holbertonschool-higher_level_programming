@@ -24,8 +24,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query((State).options(joinedload(State.cities))
-                           .order_by(State.id).all())
+    states = session.query(State).order_by(State.id.asc())
 
     for state in states:
         print(f"{state.id}: {state.name}")
