@@ -2,9 +2,10 @@
 SELECT name
 FROM tv_genres
 WHERE id NOT IN (
-    SELECT tv_genres.id
-    FROM tv_show_genres
-    JOIN tv_shows ON tv_shows.id = tv_show_genres.show_id
-    WHERE tv_shows.title = 'Dexter'
+    SELECT tsg.genre_id
+    FROM tv_show_genres AS tsg
+    JOIN tv_shows as ts
+    ON tsg.show_id = ts.id
+    WHERE ts.title = 'Dexter'
 )
 ORDER BY name ASC;
