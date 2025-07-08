@@ -1,12 +1,12 @@
 #!/usr/bin/node
-function countArgs () {
-  return arguments.length;
-}
+const { argv } = require('node:process');
 
-if (countArgs() === 0) {
-  console.log('No argument');
-} else if (countArgs() === 1) {
-  console.log('Argument found');
-} else {
-  console.log('Arguments found');
-}
+argv.forEach((val, index) => {
+  if (index === 0) {
+    console.log('No argument');
+  } else if (index === 1) {
+    console.log('Argument found');
+  } else {
+    console.log('Arguments found');
+  }
+});
