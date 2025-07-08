@@ -6,6 +6,7 @@ if (parseInt(argv[2])) {
     for (let j = 0; j < argv[2]; j++) {
       console.log('X');
     }
+    console.log('X');
   }
 } else {
   console.log('Missing size');
