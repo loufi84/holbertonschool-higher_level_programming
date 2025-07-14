@@ -7,6 +7,12 @@ This module generate an invitation, based on the given template.
 
 
 def generate_invitations(template, attendees):
+    """
+    This method will generate the invitations.
+    Args:
+        template: The base template to copy.
+        attendees: A list of dictionaries to fill the templates.
+    """
     if not isinstance(template, str):
         logging.error("Template must be a string!")
         return
